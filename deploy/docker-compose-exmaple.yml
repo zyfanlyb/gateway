@@ -1,0 +1,18 @@
+services:
+  # 网关服务
+  gateway:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: gateway
+    ports:
+      - "11000:11000"
+    environment:
+      # Nacos 配置
+      - nacos_ip=172.17.0.1
+      - nacos_port=10002
+      - nacos_username=nacos
+      - nacos_password=
+      # Spring Profile
+      - SPRING_PROFILES_ACTIVE=prod
+    restart: unless-stopped
