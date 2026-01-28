@@ -6,8 +6,6 @@ target/
 env.properties
 .idea
 
-docker-compose.yml
-
 # 日志目录
 deploy/logs/
 *.log

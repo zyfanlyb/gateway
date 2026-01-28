@@ -18,4 +18,4 @@ USER spring:spring
 EXPOSE 11001
 
 # 启动应用
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar","--spring.cloud.nacos.discovery.server-addr=172.17.0.1:10002","--spring.cloud.nacos.config.server-addr=172.17.0.1:10002"]
