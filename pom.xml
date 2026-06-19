@@ -93,9 +93,6 @@
                 <filtering>true</filtering>
             </resource>
         </resources>
-        <filters>
-            <filter>${project.basedir}/src/main/resources/env.properties</filter>
-        </filters>
 
         <plugins>
             <plugin>

@@ -8,18 +8,19 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: ${nacos_ip}:${nacos_port}
-        username: ${nacos_username}
-        password: ${nacos_password}
+        server-addr: ${NACOS_IP}:${NACOS_PORT}
+        username: ${NACOS_USERNAME}
+        password: ${NACOS_PASSWORD}
         namespace: ${spring.profiles.active}
       config:
-        server-addr: ${nacos_ip}:${nacos_port}
-        username: ${nacos_username}
-        password: ${nacos_password}
+        server-addr: ${NACOS_IP}:${NACOS_PORT}
+        username: ${NACOS_USERNAME}
+        password: ${NACOS_PASSWORD}
         namespace: ${spring.profiles.active}
         file-extension: yaml
   config:
     import:
+      - optional:file:.env[.properties]
       - nacos:${spring.application.name}.${spring.cloud.nacos.config.file-extension}
 logging:
   level:
